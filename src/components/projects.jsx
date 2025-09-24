@@ -16,7 +16,7 @@ const Projects = () => {
       title: 'manage landing page master',
       description: 'Manage Landing Page – A modern, responsive landing page built as part of a Frontend Mentor challenge. It showcases clean UI design with well-structured sections including hero, features, testimonials, and a call-to-action. I focused on accessibility, semantic HTML, and reusable CSS components while ensuring the site adapts seamlessly across devices.',
       technologies: ['HTML', 'CSS'],
-      image: '/public/Screenshot 2025-09-24 184512.png', // Replace with your image URL
+      image: '/Screenshot 2025-09-24 184512.png', // Replace with your image URL
       liveUrl: 'https://manage-landing-page-master-iota.vercel.app'
     },
     {
@@ -139,6 +139,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
 
    
