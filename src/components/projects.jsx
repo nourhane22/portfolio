@@ -24,7 +24,7 @@ const Projects = () => {
       title: 'Clipboard landing page',
       description: 'A clean and responsive landing page built as part of a Frontend Mentor challenge ,This project allowed me to practice structuring reusable components, applying responsive layouts, and delivering a professional user experience.',
       technologies: ['HTML', 'CSS', 'Javascript'],
-      image: '/public/Screenshot 2025-09-24 184754.png', // Replace with your image URL
+      image: '/Screenshot 2025-09-24 184754.png', // Replace with your image URL
       liveUrl: 'https://clipboard-landing-page-master.vercel.app'
     },
     // Add more projects as needed
@@ -33,7 +33,7 @@ const Projects = () => {
       title: 'Conference ticket generator',
       description: 'A dynamic landing/project page made for generating conference tickets, built as a Frontend Mentor-style challenge. The app demonstrates interactive functionality with a real-time ticket generator and user-friendly interface,',
       technologies: ['React', 'CSS','React Router'],
-      image: '/public/Screenshot 2025-09-24 185558.png', // Replace with your image URL
+      image: '/Screenshot 2025-09-24 185558.png', // Replace with your image URL
       liveUrl: 'https://coding-con.netlify.app'
     },
   ];
@@ -143,3 +143,4 @@ export default Projects;
 
 
    
+
