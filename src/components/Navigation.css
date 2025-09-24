@@ -1,0 +1,177 @@
+/* Base styles */
+.navbar {
+  position: fixed;
+  top: 15px;  left: 0; right: 0;
+ 
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* allow dropdown below */
+  transition: border 0.3s;
+  background: transparent;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+
+  backdrop-filter: blur(6px);
+  
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+
+}
+
+.nav-links button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #1f1235 ;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-links button:hover {
+  color: #8b22ae;
+}
+
+.nav-links .active {
+  color: #8e2fae;
+}
+
+.nav-links .active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #5D2F77, white);
+  transition: opacity 0.3s;
+}
+
+/* Mobile */
+.hamburger {
+  display: none;
+  padding: 8px;
+  cursor: pointer;
+   position: absolute;
+  right: 16px;
+  top: 50%;
+
+  transition: color 0.2s ease;
+  color: #1f1235 ;
+}
+
+.hamburger:hover {
+  color: #3E1E68;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px,-8px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(236, 72, 153, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu button {
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding: 20px 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1f1235 ;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.2)
+;
+}
+
+.mobile-menu button:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu button:hover {
+  color: #9923c1;
+  background: rgba(236, 72, 153, 0.2);
+}
+
+.mobile-menu button.active {
+  color: #8725a8;
+  background: rgba(236, 72, 153, 0.2);
+}
+
+
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    padding: 20px 20px;
+    display: block;
+  }
+}
