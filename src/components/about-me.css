@@ -1,0 +1,43 @@
+/* about-me.css */
+
+.about-section {
+  min-height: 40vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF1F1; /* same as skill section */
+  text-align: center;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.title-wrapper {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.58rem;
+}
+
+.section-title .highlight {
+  color: #6d28d9; /* primary purple */
+}
+
+.title-underline {
+  width: 5rem;
+  height: 4px;
+  background: #6d28d9;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.about-text{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
