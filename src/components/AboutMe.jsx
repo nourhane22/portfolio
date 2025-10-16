@@ -36,7 +36,13 @@ export default function About(){
       gsap.fromTo(
       ".about-h1",
       { y: "100%" },
-       { y: "0%", duration: 1, ease: "power2.out"}
+       { y: "0%", duration: 1, ease: "power2.out",
+        scrollTrigger:{
+          trigger:".about-h1",
+           start: "top 85%",
+      toggleActions: "play none none reverse"
+        }
+       }
     );
     gsap.fromTo(
   ".animate-text",

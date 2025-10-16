@@ -15,6 +15,8 @@ return (
        <Navigation />
     </div>
                 <About/>
+                    <Projects/> 
+
 
       {
         /*
