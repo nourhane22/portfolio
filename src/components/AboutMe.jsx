@@ -1,58 +1,74 @@
 import "./about-me.css";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { useRef } from "react";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(SplitText);
+export default function About(){
+  const firstPRef = useRef(null);
 
-export default function AboutMeSection() {
-  const titleRef = useRef(null);
-  const paragraphRef = useRef(null);
+  useEffect(() => {
+    if (!firstPRef.current) return;
 
-  useGSAP(() => {
-    // Split and animate title
-    const titleSplit = new SplitText(titleRef.current, { type: "chars" });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.4,
-    });
+    const loadSplitType = async () => {
+      const SplitType = (await import('split-type')).default;
+      const text = new SplitType(firstPRef.current, { types: 'chars' });
 
-    // Animate paragraph lines
-    const paraSplit = new SplitText(paragraphRef.current, { type: "lines" });
-    gsap.from(paraSplit.lines, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.1,
-      delay: 0.5,
-    });
+      gsap.fromTo(
+        text.chars,
+        { opacity: 0.3 },
+        {
+          opacity: 1,
+          color: '#141412',
+          duration: 0.3,
+          stagger: 0.02,
+          scrollTrigger: {
+            trigger: firstPRef.current,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true,
+          },
+        }
+      );
+    };
+
+    loadSplitType();
+      gsap.fromTo(
+      ".about-h1",
+      { y: "100%" },
+       { y: "0%", duration: 1, ease: "power2.out"}
+    );
+    gsap.fromTo(
+  ".animate-text",
+  { y: 100, opacity: 0 },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".animate-text",
+      start: "top 85%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
-  return (
-    <div className="about-section">
-      <div className="container">
-        <div className="title-wrapper">
-          <h1 className="section-title" ref={titleRef}>
-            About <span className="highlight">Me</span>
-          </h1>
-          <div className="title-underline"></div>
-        </div>
-        <div className="content-wrapper">
-          <p className="about-text" ref={paragraphRef}>
-            I’m a front-end developer with a passion for creating clean,
-            interactive, and user-friendly web experiences. I enjoy working with
-            modern technologies like React, JavaScript, and CSS to bring ideas
-            to life. Beyond coding, I’m always exploring new design trends and
-            looking for ways to blend creativity with functionality.
-          </p>
-        </div>
-      </div>
-       <div className="scroll-indicator" aria-hidden="true"></div>
-    </div>
-  );
+  return(
+    <section className="about">
+
+       <h1 className="about-h1"> A FEW WORDS ABOUT ME </h1>
+
+      <h1 className="animate-text" ref={firstPRef}>
+      <span className="text-span"> Front-end developer crafting clean interfaces with precise </span>  motion and meaningful interaction.
+        I focus on performance, accessibility, and visual clarity—turning ideas into fast,
+        responsive, and intuitive web experiences built with modern technologies.
+      </h1>
+    </section>
+  )
 }

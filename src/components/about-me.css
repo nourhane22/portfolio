@@ -1,43 +1,36 @@
-/* about-me.css */
+.about{
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding-top: 5rem;
+  padding-right: 8rem;
+    padding-left: 2rem;
 
-.about-section {
-  min-height: 40vh;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFF1F1; /* same as skill section */
-  text-align: center;
+  overflow: hidden;
+
+}
+.about-h1{
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+   text-align: left;
+  padding-top: 5%;
+  font-size: 5rem;
 }
 
-.container {
-  max-width: 60rem;
-  margin: 0 auto;
-}
+.about-h1{
+  padding: rem;
 
-.title-wrapper {
-  margin-bottom: 2rem;
 }
+.text-span{
+  padding-left: 10%;
+}
+.animate-text{
+    padding-left: 8rem;
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.58rem;
-}
-
-.section-title .highlight {
-  color: #6d28d9; /* primary purple */
-}
-
-.title-underline {
-  width: 5rem;
-  height: 4px;
-  background: #6d28d9;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
-.about-text{
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.5rem;
 }

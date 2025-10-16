@@ -29,12 +29,12 @@ export default function Hero() {
     <section className="hero">
       <div className="preloader">
         <div className="hero-title">
-          <h1> Code &  <span className="title-span">Interaction </span> </h1>
+          <h1 className="hero-h1"> Code &  <span className="title-span">Interaction </span> </h1>
         </div>
         <div className="hero-description">
           <p> Front-end development with soul <br />
-Smooth motion. Sharp design. Real impact. </p>
-        </div>
+               Smooth motion. Sharp design. Real impact. </p>
+        </div> 
       </div>
     </section>
   );
