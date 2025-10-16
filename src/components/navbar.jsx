@@ -1,88 +1,44 @@
-import { useState, useEffect } from "react";
 import "./Navigation.css"; // custom CSS file
 
-const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
-];
-
 export default function Navigation() {
-  const [activeSection, setActiveSection] = useState("home");
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      // Track current section
-      const sections = navItems.map((item) => item.href.slice(1));
-      const current = sections.find((section) => {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          return rect.top <= 0 && rect.bottom >= 50;
-        }
-        return false;
-      });
-
-      if (current) setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (href) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  };
-
-  return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
-        <div className="nav-links">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className={activeSection === item.href.slice(1) ? "active" : ""}
-            >
-              {item.name}
-            </button>
-          ))}
+  return (  
+    <><nav>
+      <div className="info">
+        <p></p>
+      </div>
+      <div className="log">
+        <p><a href="#"> Nourhane's Portfolio</a></p>
+      </div>
+      <div className="toggle-btn">
+        <button className="burger"></button>
+      </div>
+    </nav>
+    <div className="overlay">
+      <div className="overlay-menu">
+        <div className="menu-item">
+          <p><a id="active" href="#">HOME</a></p>
         </div>
-
-        {/* Mobile hamburger */}
-         <div
-            className={`hamburger ${menuOpen ? 'active' : ''}`}
-            onClick={setMenuOpen.bind(this, !menuOpen)}
-          >
-            <div className="hamburger-icon">
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-            </div>
-          </div>
+          <div className="menu-item">
+          <p><a href="#">WORK</a></p>
         </div>
-
-        {/* Mobile Menu */}
-        <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className={activeSection === item.href.slice(1) ? 'active' : ''}
-            >
-              {item.name}
-            </button>
-          ))}
+           <div className="menu-item">
+          <p><a href="#">SKILLS</a></p>
         </div>
-      </nav>
+           <div className="menu-item">
+          <p><a href="#">CONTACT</a></p>
+        </div>
+        <div className="sub-nav">
+          <p><a href="#">Instagram</a></p>
+          <p>·</p>
+           <p><a href="#">LINKDIN</a></p>
+          <p>·</p>
+            <p><a href="#">WHATUP</a></p>
+         <p>·</p>
+        </div>
+      </div>
+    </div>
+    </>
 
-  );
-}
+
+     );
+        } 
