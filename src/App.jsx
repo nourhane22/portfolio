@@ -12,14 +12,17 @@ return (
   <>
     <div className="App">
     
-     <CustoomCursor />
+     
     </div>
       <Navigation />
       <Hero />
+      {
+        /*
       <About/>
     <Projects/> 
       <Skill/>
-      <Connect/>
+      <Connect/>*/
+      }
   
   </>
  )
