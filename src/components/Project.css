@@ -1,115 +1,180 @@
-.projects{
-    background:#FFF1F1;
-
+.projects {
+  display: flex;
+  height: 85vh;
 }
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 100%;
-  margin: 0 auto;
-  background:black;
+
+/* Left sidebar with rotated text */
+.projects-sidebar {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: auto;
+    border-left: 2px solid #000;
+        border-right: 2px solid #000;
+
+
 }
 
 .projects-title {
-  font-size: 2rem;
-  font-weight: 700;
-  background: #FFF1F1;
   text-align: center;
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #000;
+  white-space: nowrap;
+  margin: 0;
 }
 
-.projects-title  .highlight {
-  color: #6d28d9 !important; /* primary color */
+.projects-title .highlight {
+  color: rgba(173, 173, 173, 0.786);
 }
+
+/* Main content area */
+.projects-main {
+  flex: 1;
+  padding: rem;
+  overflow-x: auto;
+}
+
+.projects-container {
+  display: flex;
+  min-width: min-content;
+
+  
+}
+
 .project-card {
-  background: transparent;
-  border-radius: 12px;
- border: #6d3eb96e 2px solid;;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex:  0 400px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease; /* Fallback for non-GSAP hover */
   cursor: pointer;
   position: relative;
+  border-right: 2px solid #000;
+   display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
 }
 
-.project-card:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-.project-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 1.5rem;
+.project-number {
+  font-size: 0.85rem;
+  color: #999;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .project-title {
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem 0;
-  color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.4;
 }
 
-.project-description {
-  font-size: 1rem;
-  color: #1b0b35ae ;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
+.project-image {
+  width: 98%;
+ padding: 10px;
+  height: 200px;
+border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-meta {
+  font-size: 0.8rem;
+  color: #999;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-tag {
-  background: #6d3eb96e ;
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
+  border: 0.5px solid #332;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.project-description {
+  font-size: 0.9rem;
   color: #555;
-  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
 }
 
 .live-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #9b50dd;
+  color: #333;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .live-link:hover {
-  color: #b06ec8;
+  color: #666;
 }
 
 .arrow {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease; /* Fallback for arrow animation */
   display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.live-link:hover .arrow {
+  transform: translateX(4px);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+  }
+
+  .projects-sidebar {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .projects-main {
+    padding: 1rem;
+  }
+
   .projects-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1.5rem;
+    flex-direction: column;
+    min-width: auto;
   }
 
-  .project-content {
-    padding: 1rem;
+  .project-card {
+    flex: 1 1 auto;
   }
 
-  .project-title {
-    font-size: 1.25rem;
+  .projects-title {
+    font-size: 2rem;
   }
 }
