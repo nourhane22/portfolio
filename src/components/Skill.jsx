@@ -116,13 +116,7 @@ export default function Projects() {
               </div>
 
 
-              <div className="project-image-wrap">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                  loading="lazy" />
-              </div>
+
               <a
                 className="live-link"
                 href={project.liveUrl}
