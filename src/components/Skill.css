@@ -1,145 +1,144 @@
+.projects-section {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
 
-.skill{
-  height: auto;
+.work-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.work-title{
+  font-size: 3.5rem ;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+
+.projects-list {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  background: #FFF1F1;
-}
-
-.container {
-  max-width: 80rem;
-  margin: 2rem 2rem;  
 
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.section-title  .highlight {
-  color: #6d28d9 !important; /* primary color */
-}
-
-.categories {
+.project-card {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-.category-btn {
-  padding: 0.5rem 1.25rem;
-  border: none;
-  text-decoration: none;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid #6d28d9; 
-  color: black;
-  background: transparent; 
-  cursor: pointer;         
-  transition: all 0.3s ease;
-  text-transform: capitalize;
-}
-
-
-.category-btn:hover {
-  background:#6c28d951;
-}
-
-.category-btn.active {
-  background: #6d28d9; /* primary */
-  color: white;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  padding: auto 5rem;
-        margin: 2rem 2rem;  
-
-}
-
-
-@media (min-width:640px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (min-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-          margin: 2rem 2rem;  
-
-  }
-
-
-}
-
-.skill-card {
-  background: transparent; /* bg-card */
-  padding: 1rem  2rem  ;
-  border: #6d3eb96e 2px solid;
-  border-radius: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  border-top: 2px solid black;
+   border-bottom: 2px solid black;
+  padding: 20px;
   transition: transform 0.2s ease;
-
 }
 
-.skill-card:hover {
-  transform: translateY(-4px) !important;
-  background-color: #8341ee2c;
+.project-image-wrap {
+  flex: 0 0 40%;
 }
 
-.skill-name {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-.floating-shapes {
-  position: absolute;
+.project-image {
   width: 100%;
   height: 100%;
-  z-index:0;
-  top: 0;
-  left: 0;
+
+  object-fit: cover;
+  border-right: 2px solid black;
 }
 
-.shape {
+.project-content {
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project-container{
+
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-description {
+  padding-left: 50%;
+    
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.529);
+
+}
+
+.tech-stack {
+  display: flex;
+    font-family:'Times New Roman', Times, serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.529);
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tech-tag {
+  text-decoration: underline;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.live-link {
   position: absolute;
-  border-radius: 50%;
-
-  filter: blur(1px);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    text-align: center;
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  opacity: 0;
+  text-decoration: none;
+  font-size: 18px;
+  transition: opacity 0.3s;
 }
 
-.shape:nth-child(1) {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(45deg, #6d28d9, #b3a5c8);
-  top:1%;
-  left: 10%;
+/* Show on hover */
+.project-card:hover .live-link {
+  opacity: 1;
 }
 
-.shape:nth-child(2) {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #3B0270, #E9B3FB);
-  top: 60%;
-  right: 5%;
-}
 
-.title-underline {
-  width: 5rem;
-  height: 4px;
-  background: #6d28d9;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
+.arrow {
+  display: inline-block;
+  margin-left: 4px;
+}
+.work{
+  position: absolute;
+  top: 333vh;
+  width: 100%;
+  height: auto;
+}
+.touch{ 
+  position: absolute;
+  top: 100vh; 
+  width: 100%; 
+  height: auto;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image-wrap {
+    width: 100%;
+  }
+
+  .project-image {
+    border-right: none;
+    border-bottom: 2px solid black;
+  }
 }
