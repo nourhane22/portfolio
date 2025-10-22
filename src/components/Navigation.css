@@ -17,10 +17,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5em 2em;
   color: #cdc6be;
   mix-blend-mode: difference;
   z-index: 999;
+  overflow: hidden;
 }
 
 nav > div {

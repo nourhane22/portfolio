@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import './Navigation.css';
-import Hero from './hero';
+import Hero from './Hero';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

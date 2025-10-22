@@ -8,25 +8,31 @@ img{
   height: 50vh;
 }
 .project-title{
-    width: 450vw;
-  
-  height: 100vh;
-  color: #000;
-  font-size: 48vw;
+
+ font-size: 48vw;
   font-family: "Bodoni Moda SC", serif;
   font-weight: 600;
+  color: #000;
   margin: 0;
+
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .wrapper{
   position: absolute;
-  top: 180%;
   width: 100vw;
   height: 100vh;
   will-change: transform;
+  overflow: hidden;
 }
 
 
+.scroll-track {
+  width: 220vw; 
+    top: 200%;
+  height: 100%;
+}
 
 .outro{
   position: absolute;

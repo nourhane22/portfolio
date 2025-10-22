@@ -29,6 +29,7 @@ export default function Hero() {
     <section className="hero">
       <div className="preloader">
         <div className="hero-title">
+          <img src="/public/download__12_-removebg-preview.png" alt="" />
           <h1 className="hero-h1"> Code &  <span className="title-span">Interaction </span> </h1>
         </div>
         <div className="hero-description">

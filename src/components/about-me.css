@@ -35,3 +35,11 @@
 
 
 }
+@media (max-width: 768px) {
+
+.about-h1{
+ 
+  padding-top: 0%;
+}
+
+}

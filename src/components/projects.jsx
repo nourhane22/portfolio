@@ -9,22 +9,22 @@ export default function Projects() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Horizontal scroll effect for wrapper
-    ScrollTrigger.create({
-      trigger: wrapperRef.current,
-      start: "180vh",
-      end: "+=500vh",
-      scrub: 1,
-      pin: true,
-      onUpdate: (self) => {
-        gsap.to(wrapperRef.current, {
-          x: `${-350 * self.progress}vw`,
-          duration: 0.2,
-          ease: "power3.out",
-        });
-      },
+ScrollTrigger.create({
+  trigger: wrapperRef.current,
+   start: "top+=100% bottom",
+  end: "+=500vh",
+  scrub: 1,
+  markers: true,
+  pin: true,
+  onUpdate: (self) => {
+    gsap.to(".scroll-track", {
+      xPercent: -150 * self.progress,
+      duration: 0.5,
+      ease: "power3.out",
     });
+  },
+});
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -33,7 +33,9 @@ export default function Projects() {
   return (
     <div className="container">
       <section className="wrapper" ref={wrapperRef}>
+        <div className="scroll-track">
         <h1 className="project-title">My Recent Work</h1>
+        </div>
       </section>
       <section className="outro">
        <Skill/>
