@@ -1,123 +1,125 @@
-/* Container */
-.social-container {
+
+/* Skills Section Styles */
+.skills-section {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills-header h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.skills-header .subtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.skill-card {
+  position: relative;
+  padding: 20px 10px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
-  padding: 20px;
+  flex-direction: column;
+  cursor: default;
+  opacity: 0;
 }
 
-.social-content {
-  max-width: 600px;
-  width: 100%;
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: #1a1a1a;
 }
 
-/* Title */
-.social-title {
-    font-family: "Bodoni Moda SC", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 72px;
-  letter-spacing: -2px;
-  margin: 0 0 30px 0;
-  color: #000;
-  
-  line-height: 1.2;
-}
-.social-title::after{
-  content: "";
-  position: absolute;
-  left: 0;                 /* start at right edge */
-  bottom: 6px;             /* adjust distance from text */
-  width: 55%;
-  height: 3px;              /* underline thickness */
-  background: #000;
-  transform: scaleX(0);     /* hidden */
-  transform-origin: left;  /* animate from right side */
-  transition: transform 250ms ease;
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
 }
 
-.social-title:hover::after{
-  transform: scaleX(1);     /* reveal leftwards */
+.skill-name {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
-/* Description */
-.social-description {
-  font-size: 18px;
-  
-    font-family: "Bodoni Moda SC", serif;
-  font-optical-sizing: auto;
-  font-weight:500;
+.skill-description {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
   line-height: 1.6;
-  color: #333;
-  margin: 0 0 60px 0;
-  letter-spacing: 0.3px;
-}
-
-/* Links Container */
-.social-links {
-    font-family: "Bodoni Moda SC", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-    display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  gap:40px;
-}
-
-/* Individual Link */
-.social-link {
-
-
-  padding: 20px 0;
-    border-bottom: 1px solid #101010;
-
-  text-decoration: none;
-  color: #000;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-
-
-.social-link:hover {
-  padding-left: 10px;
   color: #666;
+  margin-bottom: 25px;
 }
 
-/* Link Text */
-.link-text {
-  font-size: 18px;
-  letter-spacing: 0.5px;
+.skill-level {
+  position: relative;
+  height: 2px;
+  background: #e0e0e0;
+  overflow: hidden;
 }
 
-/* Arrow Icon */
-.link-arrow {
-  font-size: 20px;
-  opacity: 0.6;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.skill-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #1a1a1a;
+  transition: width 1.5s ease;
 }
 
-.social-link:hover .link-arrow {
-  transform: translate(5px, -5px);
-  opacity: 1;
+.skill-card:hover .skill-progress {
+  background: linear-gradient(90deg, #1a1a1a 0%, #4a4a4a 100%);
 }
-/* Responsive */
+
 @media (max-width: 768px) {
-  .social-title {
-    font-size: 48px;
+  .skills-header h1 {
+    font-size: 3rem;
   }
 
-  .social-description {
-    font-size: 16px;
-    margin-bottom: 40px;
+  .skills-header .subtitle {
+    font-size: 0.9rem;
+    padding: 0 20px;
   }
 
-  .link-text {
-    font-size: 16px;
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
+}
 
-  .social-link {
-    padding: 16px 0;
-  }
+.touch{ 
+  position: absolute;
+  top: 130vh; 
+  width: 100%; 
+  height: auto;
 }

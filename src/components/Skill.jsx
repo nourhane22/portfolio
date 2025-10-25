@@ -12,12 +12,12 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "manage landing page master",
+      title: "Vandal",
       description:
-        "Manage Landing Page – modern responsive landing page. Focus on accessibility, semantic HTML and reusable CSS. Adapts across devices.",
-      technologies: ["HTML", "CSS"],
+        "VANDAL is a concept web project showcasing bold motion design and interactive UI. Built to express rebellion and creativity through smooth GSAP animations, minimal layout, and strong visual identity. It highlights dynamic front-end execution and experimental branding.",    
+  technologies: ["React", "CSS","GSAP"],
       image: "/public/Screenshot 2025-09-24 184512.png",
-      liveUrl: "https://manage-landing-page-master-iota.vercel.app",
+      liveUrl: "https://vandall.vercel.app",
     },
     {
       id: 2,

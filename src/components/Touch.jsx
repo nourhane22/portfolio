@@ -23,9 +23,9 @@ export default function ConnectUs() {
     e.preventDefault();
 
     // User requested to leave IDs empty. Fill these with your EmailJS values.
-    const SERVICE_ID = ''; // e.g. 'service_xxx'
-    const TEMPLATE_ID = ''; // e.g. 'template_xxx'
-    const PUBLIC_KEY = ''; // e.g. 'public_xxx'
+    const SERVICE_ID = 'service_7wacf5h'; // e.g. 'service_xxx'
+    const TEMPLATE_ID = 'template_1nl9ptw'; // e.g. 'template_xxx'
+    const PUBLIC_KEY = 'thRL1SAfl6Q8KRhZj'; // e.g. 'public_xxx'
 
     if (!formRef.current) return;
 
@@ -160,15 +160,15 @@ export default function ConnectUs() {
           <div className="contact-info">
             <div className="info-item">
               <h4>Email</h4>
-              <p>hello@example.com</p>
+              <p>nourhanebek2@gmail.com</p>
             </div>
             <div className="info-item">
               <h4>Phone</h4>
-              <p>+1 (555) 123-4567</p>
+              <p>0676 86 88 62</p>
             </div>
             <div className="info-item">
               <h4>Location</h4>
-              <p>New York, USA</p>
+              <p>ORAN , ALGERIA</p>
             </div>
           </div>
         </div>
