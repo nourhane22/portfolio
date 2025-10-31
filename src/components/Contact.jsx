@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa';
 import { SiGreensock } from 'react-icons/si'; // GSAP icon
 
-export default function Connect() {
+export default function Contact() {
   const containerRef = useRef(null);
   const skillCardsRef = useRef([]);
 

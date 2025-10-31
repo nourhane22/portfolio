@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Skill.css";
-import Connect from './Contect.jsx'
+import Contact from './Contact.jsx'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +133,7 @@ export default function Projects() {
           </article>
         ))}
         <section className="work">
-        <Connect />
+        <Contact />
       </section>
       </div>
    
