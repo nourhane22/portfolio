@@ -19,7 +19,6 @@ export default function Projects() {
         end: "+=500vh",
         scrub: 1,
         pin: true,
-        markers: true,
         onUpdate: (self) => {
           gsap.to(".scroll-track", {
             xPercent: -150 * self.progress,

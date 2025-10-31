@@ -4,6 +4,7 @@
   max-width: 80%;
   margin: 0 auto;
   padding: 100px 20px;
+ 
 }
 
 .skills-header {
@@ -80,18 +81,21 @@
 }
 
 @media (max-width: 768px) {
-  .skills-section {
+ .skills-section {
   max-width: 100%;
+  margin: 0 auto;
+  padding: 300px 20px;
  
 }
 
+
   .skills-header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .skills-header .subtitle {
-    font-size: 0.9rem;
-    padding: 0 20px;
+    font-size: 0.5rem;
+    padding: 0 10px;
   }
 
   .skills-grid {
