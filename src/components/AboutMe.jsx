@@ -68,7 +68,7 @@ export default function About(){
   return(
     <section className="about">
 
-       <h1 className="about-h1"> A FEW WORDS ABOUT ME </h1>
+       <h1 className="about-h1"> ABOUT ME </h1>
 
       <h1 className="animate-text" ref={firstPRef}>
       <span className="text-span"> Front-end developer crafting clean interfaces with precise </span>  motion and meaningful interaction.
