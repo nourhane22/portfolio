@@ -15,6 +15,7 @@
   line-height: 1;
   margin: 0;
   max-width: 100%;
+  color: #f3f3f3;
 }
 
 /* Preloader */
@@ -57,6 +58,7 @@
   line-height: 1.5;
   margin: 0;
   z-index: 1;
+  color: #f3f3f3;
 }
 
 /* Hero Description */
@@ -76,6 +78,7 @@
   font-weight: 500;
   line-height: 1.6;
   margin: 0;
+  color: #f3f3f3;
 }
 
 /* Title Span */

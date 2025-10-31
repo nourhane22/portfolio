@@ -139,7 +139,7 @@ export default function ConnectUs() {
   }, []);
 
   return (
-    <div ref={containerRef} className="connect-us-container">
+    <div id="contact"ref={containerRef} className="connect-us-container">
       {/* Marquee Section */}
       <div className="card-marquee">
         <div className="marquee" ref={marqueeRef}>

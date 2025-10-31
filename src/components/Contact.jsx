@@ -88,7 +88,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div ref={containerRef} className="social-container">
+    <div id="skills" ref={containerRef} className="social-container">
       <div className="skills-section">
         <header className="skills-header">
           <h1>My Skills</h1>

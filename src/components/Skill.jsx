@@ -94,7 +94,7 @@ export default function Projects() {
 
   // ----- RETURN UI -----
   return (
-    <><section className="projects-section">
+    <><section id="work" className="projects-section">
       <div className="projects-list">
         {projects.map((project) => (
           <article className="project-card" key={project.id}>

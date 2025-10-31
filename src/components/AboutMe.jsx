@@ -34,7 +34,7 @@ export default function About() {
         {
           opacity: 1,
           y: 0,
-          color: "#141412",
+          color: "#f3f3f3",
           duration: 2,
           scrollTrigger: {
             trigger: firstPRef.current,

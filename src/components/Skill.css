@@ -14,6 +14,7 @@
   font-size: 3.5rem;
   text-transform: uppercase;
   margin: 0;
+  color: #f3f3f3;
 }
 
 .projects-list {
@@ -26,8 +27,8 @@
 .project-card {
   display: flex;
   gap: 20px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #f3f3f3;
+  border-bottom: 2px solid #f3f3f3;
   padding: 20px;
   transition: transform 0.2s ease;
   width: 100%;
@@ -53,7 +54,7 @@
   padding-left: 20px;
   font-size: 14px;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.529);
+  color: rgba(243, 243, 243, 0.529);
   margin-bottom: 12px;
 }
 
@@ -61,7 +62,7 @@
   display: flex;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.529);
+  color: rgba(243, 243, 243, 0.529);
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 12px;
@@ -83,8 +84,8 @@
   text-align: center;
   font-family: "Bodoni Moda SC", serif;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+  background: rgba(243, 243, 243, 0.6);
+  color: #000000;
   opacity: 0;
   text-decoration: none;
   font-size: 18px;

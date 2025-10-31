@@ -30,7 +30,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <div className="preloader">
         <div className="hero-title">
           <h1 className="hero-h1">

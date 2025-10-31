@@ -8,7 +8,7 @@
 
 a {
   text-decoration: none;
-  color: #cdc6be;
+  color: #000000;
 }
 
 /* Navigation */
@@ -112,7 +112,7 @@ nav.active .burger::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #141412;
+  background: #f3f3f3;
   z-index: 999;
   animation: fadeIn 0.3s ease-out;
 }
@@ -159,7 +159,7 @@ nav.active .burger::after {
   line-height: 1;
   will-change: transform;
   transition: letter-spacing 0.3s ease;
-  color: #cdc6be;
+  color: #000000;
 }
 
 .menu-item p:hover {
@@ -180,12 +180,12 @@ nav.active .burger::after {
 .sub-nav p {
   font-family: "Bodoni Moda SC", serif;
   font-size: 18px;
-  color: #cdc6be;
+  color: #000000;
   font-weight: 500;
 }
 
 .sub-nav a {
-  color: #cdc6be;
+  color: #000000;
   transition: letter-spacing 0.3s ease;
 }
 
