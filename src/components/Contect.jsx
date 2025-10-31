@@ -9,7 +9,6 @@ import {
   FaCss3Alt,
   FaJsSquare,
   FaGithub,
-  FaMobileAlt,
   FaGitAlt,
 } from 'react-icons/fa';
 import { SiGreensock } from 'react-icons/si'; // GSAP icon

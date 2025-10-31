@@ -11,65 +11,80 @@ a {
   color: #cdc6be;
 }
 
+/* Navigation */
 nav {
   position: fixed;
   width: 100%;
+  color: #cdc6be;
+  mix-blend-mode: difference;
+  z-index: 1000;
+  padding: 1em 2em;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #cdc6be;
-  mix-blend-mode: difference;
-  z-index: 999;
-  overflow: hidden;
+  width: 100%;
 }
 
-nav > div {
+/* Logo Styles */
+.logo {
   flex: 1;
 }
 
 .logo p {
-  text-align: center;
+  margin: 0;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #cdc6be;
   font-family: "Bodoni Moda SC", serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
-.logo a {
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
-  color: #cdc6be;
+/* Main Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
+/* Toggle Button */
 .toggle-btn {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
+/* Burger Menu */
 .burger {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.75em 2em 1.5em 2em;
-  background: rgba(255, 255, 255, 0);
+  width: 50px;
+  height: 50px;
+  background: transparent;
   outline: none;
   border: none;
-  width: 20px;
-  height: 20px;
-  transition: all 250ms ease-out;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .burger::before,
 .burger::after {
   content: '';
   position: absolute;
-  width: 40px;
+  width: 30px;
   height: 2px;
   background: #cdc6be;
-  transition: all 250ms ease-out;
+  transition: all 0.3s ease-out;
   will-change: transform;
 }
 
@@ -81,6 +96,7 @@ nav > div {
   transform: translateY(3px);
 }
 
+/* Active State */
 nav.active .burger::before {
   transform: translateY(0) rotate(45deg);
 }
@@ -89,18 +105,19 @@ nav.active .burger::after {
   transform: translateY(0) rotate(-45deg);
 }
 
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   background: #141412;
-  z-index: 99;
-  animation: slideIn 0.3s ease-out;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes slideIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -109,6 +126,7 @@ nav.active .burger::after {
   }
 }
 
+/* Overlay Menu */
 .overlay-menu {
   position: fixed;
   top: 0;
@@ -116,18 +134,18 @@ nav.active .burger::after {
   width: 100vw;
   height: 100vh;
   display: flex;
-  gap: 1em;
-    background: #141412;
-
+  gap: 1.5em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 999;
 }
 
+/* Menu Items */
 .menu-item {
   display: flex;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .menu-item p {
@@ -137,10 +155,10 @@ nav.active .burger::after {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 8vw;
-  line-height: 80%;
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
   will-change: transform;
-  transition: letter-spacing 0.3s;
+  transition: letter-spacing 0.3s ease;
   color: #cdc6be;
 }
 
@@ -148,39 +166,76 @@ nav.active .burger::after {
   letter-spacing: 0.075em;
 }
 
+/* Sub Navigation */
 .sub-nav {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5em;
+  gap: 1.5em;
+  z-index: 1000;
 }
 
 .sub-nav p {
   font-family: "Bodoni Moda SC", serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #cdc6be;
   font-weight: 500;
 }
 
 .sub-nav a {
   color: #cdc6be;
-  transition: letter-spacing 0.3s;
+  transition: letter-spacing 0.3s ease;
 }
 
 .sub-nav a:hover {
   letter-spacing: 0.075em;
 }
-.hero-comp{
-  background-color: #F8F9FA;
-  width: 100vw;
+
+/* Hero Component */
+.hero-comp {
+  width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-@media (min-width: 780px) {
+/* Media Queries */
+@media (max-width: 780px) {
+  nav {
+    padding: 1em;
+  }
+
+  .logo a {
+    font-size: 15px;
+  }
+
   .menu-item p {
-    font-size: 10vw;
+    font-size: clamp(2.5rem, 10vw, 6rem);
+  }
+
+  .sub-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .sub-nav p {
+    font-size: 16px;
+  }
+
+  .burger::before,
+  .burger::after {
+    width: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 20px;
+  }
+
+  .overlay-menu {
+    gap: 1em;
   }
 }

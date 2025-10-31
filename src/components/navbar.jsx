@@ -47,10 +47,8 @@ export default function Navigation() {
   return (
     <>
       <nav className={isOpen ? 'active' : ''}>
-        <div className="info">
-          <p></p>
-        </div>
-        <div className="logo">
+        <div className="navbar">
+           <div className="logo">
           <p><a href="#">Nourhane's Portfolio</a></p>
         </div>
         <div className="toggle-btn">
@@ -61,6 +59,8 @@ export default function Navigation() {
             aria-expanded={isOpen}
           ></button>
         </div>
+        </div>
+     
       </nav>
 
       <div
