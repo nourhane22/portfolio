@@ -22,11 +22,6 @@ export default function Hero() {
       { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: "power4.out" }
     );
 
-    gsap.fromTo(
-      ".hero img",
-      { y: 100, opacity: 0, rotate: 0 },
-      { y: 0, opacity: 1, rotate: 90, duration: 1, delay: 0.2, ease: "power4.out" }
-    );
   }, []);
 
   return (

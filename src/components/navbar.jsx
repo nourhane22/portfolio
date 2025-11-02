@@ -112,15 +112,12 @@ export default function Navigation() {
             <p>
               <a href="https://www.instagram.com/by_nourhanne?igsh=cHcyd2h5Ym92bzI1" target="_blank" rel="noopener noreferrer">Instagram</a>
             </p>
-            <p>·</p>
             <p>
               <a href="https://www.linkedin.com/in/nourhanne-bekhadra-b20904320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_ap" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </p>
-            <p>·</p>
             <p>
               <a href="https://wa.me/qr/MRIJCJGYYOWPD1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </p>
-            <p>·</p>
           </div>
         </div>
       </div>
