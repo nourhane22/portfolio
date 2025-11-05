@@ -1,21 +1,20 @@
-// Projects.jsx
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
 import "./Skill.css";
-import Contact from './Contact.jsx'
+import Contact from "./Contact.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
-  // ----- DATA ABOVE RETURN -----
   const projects = [
     {
       id: 1,
       title: "Vandal",
       description:
-        "VANDAL is a concept web project showcasing bold motion design and interactive UI. Built to express rebellion and creativity through smooth GSAP animations, minimal layout, and strong visual identity. It highlights dynamic front-end execution and experimental branding.",    
-  technologies: ["React", "CSS","GSAP"],
+        "VANDAL is a concept web project showcasing bold motion design and interactive UI. Built to express rebellion and creativity through smooth GSAP animations, minimal layout, and strong visual identity. It highlights dynamic front-end execution and experimental branding.",
+      technologies: ["React", "CSS", "GSAP"],
       image: "/public/Screenshot 2025-09-24 184512.png",
       liveUrl: "https://vandall.vercel.app",
     },
@@ -39,9 +38,22 @@ export default function Projects() {
     },
   ];
 
-  // ----- GSAP ANIMATIONS -----
   useEffect(() => {
-    // entrance animation for each card
+    // Lenis setup
+    const lenis = new Lenis({
+      smooth: true,
+      lerp: 0.1,
+      direction: "vertical",
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      ScrollTrigger.update();
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP Animations
     gsap.utils.toArray(".project-card").forEach((card, i) => {
       gsap.fromTo(
         card,
@@ -61,7 +73,6 @@ export default function Projects() {
       );
     });
 
-    // hover scale + arrow move
     gsap.utils.toArray(".project-card").forEach((card) => {
       const arrow = card.querySelector(".arrow");
       const enter = () => {
@@ -74,8 +85,6 @@ export default function Projects() {
       };
       card.addEventListener("mouseenter", enter);
       card.addEventListener("mouseleave", leave);
-
-      // cleanup listeners on unmount via ScrollTrigger kill (below) but remove listeners explicitly too
       card._cleanup = () => {
         card.removeEventListener("mouseenter", enter);
         card.removeEventListener("mouseleave", leave);
@@ -83,28 +92,23 @@ export default function Projects() {
     });
 
     return () => {
-      // remove listeners
       gsap.utils.toArray(".project-card").forEach((card) => {
         if (card._cleanup) card._cleanup();
       });
-      // kill ScrollTriggers
       ScrollTrigger.getAll().forEach((t) => t.kill());
+      lenis.destroy();
     };
   }, []);
 
-  // ----- RETURN UI -----
   return (
-    <><section id="work" className="projects-section">
+    <section id="work" className="projects-section">
       <div className="projects-list">
         {projects.map((project) => (
           <article className="project-card" key={project.id}>
             <div className="project-content">
               <div className="project-container">
-
                 <h3 className="work-title">{project.title}</h3>
-
                 <p className="project-description">{project.description}</p>
-
                 <div className="tech-stack">
                   {project.technologies.map((t) => (
                     <span className="tech-tag" key={t}>
@@ -112,10 +116,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-
               </div>
-
-
 
               <a
                 className="live-link"
@@ -125,20 +126,13 @@ export default function Projects() {
               >
                 Visit Live Site <span className="arrow">→</span>
               </a>
-
-
-
             </div>
-
           </article>
         ))}
         <section className="work">
-        <Contact />
-      </section>
+          <Contact />
+        </section>
       </div>
-   
     </section>
-   
-      </>
   );
 }

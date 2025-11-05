@@ -1,9 +1,26 @@
 import { useEffect } from "react";
 import gsap from "gsap";
+import Lenis from "@studio-freight/lenis";
 import "./Hero.css";
 
 export default function Hero() {
   useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      smooth: true,
+      smoothTouch: true,
+      direction: "vertical",
+    });
+
+    // Animation frame loop for Lenis
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
     gsap.fromTo(
       ".title-span",
       { y: "100%" },
@@ -22,6 +39,9 @@ export default function Hero() {
       { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: "power4.out" }
     );
 
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
@@ -40,9 +60,8 @@ export default function Hero() {
           </p>
         </div>
         <div className="scroll-text">
-          <h1>(SCROLL) </h1>
+          <h1>(SCROLL)</h1>
         </div>
-
       </div>
     </section>
   );
